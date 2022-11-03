@@ -1,0 +1,226 @@
+#include <conio.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream> 
+#include <fstream>
+#include <string.h> 
+#include <windows.h>
+
+using namespace std; 
+
+//Se busca con este proyecto imitar el comportamiento humano basado en literatura acerca de la Programación
+//Neuro-lingüistica (PNL) en personas efectivas con dotes de liderazgo, respondiendo a determinado numero 
+//de estímulos, reaccionando a una 'acción' que sera ingresada al sistema en forma de una oración o frase
+//corta, simulando las acciones que una persona con dichas características realizaría.
+int i=0, j, option=1;
+//bool happy, unhappy, shy, scarried, optimistic, pesimistic, peace, laught, hopeless, curiosity;
+//bool negacion(string word), res;
+//bool love, energy, tristeza, enojo, ira, angustia, ternura, emoción, excited, agitación, nerviosismo;
+//bool pánico, miedo, alegría, pena, verguenza, verguenzaajena, incertidumbre, confusión, risa, esperanza;
+char nombre[10];
+char sentence[10], hola[10]= "hola", adios[10]= "adios", ay[10]= "comoestas", bad[10]="mal";
+//char science[10]="ciencia";
+char name[100], meet[100], meet2[100];
+char sad[10]="triste", horrible[10]="horrible";
+char deluxe[10]="de lujo", good [10]="bien", best[10]="mejor", perfect[10]="perfecto";
+char negative[10]="no", sup[10]="nada", tanto[10]="tanto";
+main()
+{
+   FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" Programa que contesta tus preguntas basado en PNL. Escribe hola\"");
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+
+	printf("Programa que contesta tus preguntas basado en PNL \n NO USAR MAYUSCULAS NI ACENTOS"" \n Escribe hola \n ");
+	
+	gets(sentence);
+
+	if(strcmp(sentence, hola)==0)
+   {
+   FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" ¿cual es tu nombre?\"");
+    fclose(fichero);
+    ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	gets(nombre);
+//_____________________________________________________________________________________________________________________________
+
+while(option!=3) 
+{	
+
+if(option==1)
+{
+i=1;
+printf("%d", i);
+
+if(i==1)
+{
+FILE* fichero2;
+fichero2 = fopen("hola.vbs", "wt");
+fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" Mucho gusto %s, ¿como te va el día de hoy?\"",nombre);
+fclose(fichero2);
+ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+gets(sentence);
+string str = string(sentence);
+string word = string(str);
+if(str.find(good)!=-1)
+	{
+	//	if(((str.find(negative))||(str.find(sup)))<(str.find(good)))
+		if((str.find(negative))!=-1||(str.find(sup)!=-1) && ((str.find(negative))||(str.find(sup)))<(str.find(good))  ) 	
+		{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! animo %s!!!, seguro que mañana puede ser mejor\"", nombre);
+     fclose(fichero);
+     printf("que mal");
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+	else 
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!!super %s!!!, Me alegra mucho, yo tambien estoy bien\"", nombre);
+    fclose(fichero);
+    cout << "que bien" ;
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}	}
+	else if(str.find(deluxe)!=-1)
+	{
+		if((str.find(sup))<(str.find(deluxe)))
+	{
+		FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! animo %s!!!, seguro que mañana puede ser mejor\"", nombre);
+     fclose(fichero);
+     printf("que mal");
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+	else
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! super %s!!!, Me alegra mucho, yo tambien estoy muy bien\"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}}
+	else if(str.find(best)!=-1)
+	{
+	if((str.find(sup))<(str.find(best)))
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! animo %s!!!, seguro que mañana puede ser mejor\"", nombre);
+     fclose(fichero);
+     printf("que mal");
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+	else
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!!super %s!!!, Me alegra mucho, yo tambien estoy bien\"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}}
+	else if(str.find(perfect)!=-1)
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! super %s!!!, Me alegra mucho, yo tambien estoy muy bien\"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+
+
+	else if((str.find(bad)!=-1)||(str.find(horrible)!=-1))
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! animo %s!!!, seguro que mañana puede ser mejor\"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+	i=2;
+}
+else if(i==2)
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!! animo %s!!!, ¿que hiciste ayer? \"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	i=1;
+	}
+	
+
+else if(i>2)
+	{
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" !!!  %s!!!, sin mas por el momento ? \"", nombre);
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	i=1;
+	}
+
+//fichero = fopen("hola.vbs", "wt");
+  //  fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" %s , dime que hisite hoy \"", nombre);
+    //    fclose(fichero);
+//ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+//gets(sentence);
+
+
+printf("\n  Elige una opcion \n1.- Charlar \n2.-Ciencia \n3.- Exit \n "); scanf("%d", &option);
+}
+
+else if(option==2)
+{
+	
+	printf("Elige una asignatura \n1.- Matematicas \n2.- Fisica \n3.- Literatura \n4.- Cultura General");	scanf("%d", &option);
+		
+	FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" Pi es 3.1415926535897932384...\"");
+    fclose(fichero);
+	ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	
+printf(" Pi es 3.1415926535897932384...");
+
+printf("\n  Elige una opcion \n1.- Charlar \n2.-Ciencia \n3.- Exit \n "); scanf("%d", &option);
+
+}
+
+else if(option==3)
+{
+FILE* fichero;
+	fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" Adios %s\?\"", nombre);
+    fclose(fichero);
+    ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+}
+ else if(option<1|option>3)
+{
+FILE* fichero;
+	fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" no es una opcion %s\?\"", nombre);
+    fclose(fichero);
+    ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+    printf("\n  Elige una opcion \n1.- Charlar \n2.-Ciencia \n3.- Exit \n "); scanf("%d", &option);
+
+}
+	}
+}
+
+else {
+
+FILE* fichero;
+    fichero = fopen("hola.vbs", "wt");
+    fprintf(fichero, "CreateObject(\"SAPI.SpVoice\").Speak\" error, %s\?\"", sentence);
+    fclose(fichero);
+    ShellExecute(NULL, "open", "hola.vbs", NULL, NULL, SW_SHOWDEFAULT);
+	}
+	
+getche();
+}
